@@ -3,10 +3,16 @@ import Layout from "../components/layout.js"
 
 class Main extends React.Component {
   render() {
+    const flex = {
+      height: "100%",
+      width:  "100%",
+      alignItems: "center",
+      display: "flex"
+    }
     return (
       <Layout>
-        <div className="row" style={{ "height": "100%" }}>
-          <p style={{ "text-align": "center" }}>Efforia Cloud</p>
+        <div className="row" style={flex}>
+          {/*<h1>Efforia Cloud</h1>*/}
         </div>
       </Layout>
     )
