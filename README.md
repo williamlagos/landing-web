@@ -1,2 +1,2 @@
-# mohub-landing
-Mohub landing pages, developed with Gatsby
+# landing-web
+Landing pages, developed with Gatsby
