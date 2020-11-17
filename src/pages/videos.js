@@ -10,7 +10,7 @@ import Footer from '../components/Footer'
 
 // import banner from "../assets/img/banner.png";
 // import landing01 from "../assets/img/video_play.png";
-import mohublogo from '../assets/img/mohub_white.png'
+import landinglogo from '../assets/img/landing_white.png'
 // import testimonial from "../assets/img/testimonial.png"
 import Background from '../assets/img/backgrounds/bg-01.png'
 const parallaxBackground = { backgroundImage: `url(${Background})` }
@@ -36,7 +36,7 @@ class SubscriptionConfirmationPage extends React.Component {
 
   async timer (id) {
     // Math.floor((Date.now()/1000 - res.json()[0]['created']/1000)/84600)
-    // const res = await fetch(`http://mohub-api.herokuapp.com/leads/${id}`)
+    // const res = await fetch(`http://landing-api.herokuapp.com/leads/${id}`)
     // const lead = await res.json()
     const day = 1000 * 60 * 60 * 24
     const today = new Date()
@@ -51,7 +51,7 @@ class SubscriptionConfirmationPage extends React.Component {
     if (this.state.id.length === 0) {
       window.location = '/'
     } else {
-      const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/v1/token', {
+      const response = await fetch('https://landing.com.br/wp-json/jwt-auth/v1/token', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -61,7 +61,7 @@ class SubscriptionConfirmationPage extends React.Component {
       })
       const res = await response.json()
       // console.log(res)
-      const rawResponse = await fetch(`https://mohub.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
+      const rawResponse = await fetch(`https://landing.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -94,12 +94,12 @@ class SubscriptionConfirmationPage extends React.Component {
 
   render () {
     const appId = '2267639403332673'
-    const siteTitle = 'MoHub'
-    // const title = "MoHub";
+    const siteTitle = 'Landing'
+    // const title = "Landing";
     // const summary = "Uma post teste para o Mohub";
-    // const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
-    const url = `https://www.mohub.com.br/lancamento/?id=${this.state.id}&utm_source=facebook&utm_medium=share&utm_campaign=cpl`
-    const wsUrl = `https://www.mohub.com.br/lancamento/?id=${this.state.id}`
+    // const url = "https://www.facebook.com/somoslanding/videos/2562218477149895/";
+    const url = `https://www.landing.com.br/lancamento/?id=${this.state.id}&utm_source=facebook&utm_medium=share&utm_campaign=cpl`
+    const wsUrl = `https://www.landing.com.br/lancamento/?id=${this.state.id}`
     const quote = 'Veja que negócio interessante'
     // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
     /* &p[images][0]=${image}' */
@@ -124,7 +124,7 @@ class SubscriptionConfirmationPage extends React.Component {
               <div className="row">
                 <div className="offset-by-one ten columns">
                   <div className="center spacing">
-                    <img src={mohublogo} alt="mohub logo"/>
+                    <img src={landinglogo} alt="landing logo"/>
                   </div>
                   <div>
                     {/* <div className="description">Importante! Assista ao vídeo abaixo!</div> */}
@@ -214,7 +214,7 @@ class SubscriptionConfirmationPage extends React.Component {
                     <i className="fab fa-facebook-square"></i>
                         &nbsp; Curtir
                   </button> */}
-                  <div className="fb-like" data-href="https://facebook.com/somosmohub/" data-width="" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+                  <div className="fb-like" data-href="https://facebook.com/somoslanding/" data-width="" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
                   <p/>
                 </div>
               </div>
@@ -241,7 +241,7 @@ class SubscriptionConfirmationPage extends React.Component {
                   </button>
                 </div>
                 <div className="twelve columns center">
-                  {/* <div className="fb-page" data-href="https://www.facebook.com/somosmohub/" data-tabs="" data-width="500px" data-height="70px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/somosmohub/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/somosmohub/">MoHub</a></blockquote></div> */}
+                  {/* <div className="fb-page" data-href="https://www.facebook.com/somoslanding/" data-tabs="" data-width="500px" data-height="70px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/somoslanding/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/somoslanding/">Landing</a></blockquote></div> */}
                 </div>
               </div>
               {/* <div className="row bottom">
@@ -252,7 +252,7 @@ class SubscriptionConfirmationPage extends React.Component {
               <div className="row">
                 <div className="nine columns">
                   <h3>Comente no Facebook</h3>
-                  <div className="fb-comments" data-href="https://www.facebook.com/somosmohub" data-width="100%" data-numposts="5"></div>
+                  <div className="fb-comments" data-href="https://www.facebook.com/somoslanding" data-width="100%" data-numposts="5"></div>
                 </div>
                 <div className="three columns">
                   <h3>Depoimentos</h3>

@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import Footer from '../components/Footer'
 
 // import landing01 from "../assets/img/video.png";
-import mohublogo from '../assets/img/mohub_white.png'
+import landinglogo from '../assets/img/landing_white.png'
 import Background from '../assets/img/backgrounds/bg-01.png'
 
 if (typeof (window) === 'undefined') {
@@ -31,7 +31,7 @@ class IndexPage extends React.Component {
     if (this.state.id.length === 0) {
       window.location = '/'
     } else {
-      const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/v1/token', {
+      const response = await fetch('https://landing.com.br/wp-json/jwt-auth/v1/token', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
       })
       const res = await response.json()
       // console.log(res)
-      const rawResponse = await fetch(`https://mohub.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
+      const rawResponse = await fetch(`https://landing.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -66,10 +66,10 @@ class IndexPage extends React.Component {
   }
 
   render () {
-    const siteTitle = 'MoHub'
-    // const title = "MoHub";
+    const siteTitle = 'Landing'
+    // const title = "Landing";
     // const summary = "Uma post teste para o Mohub";
-    // const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
+    // const url = "https://www.facebook.com/somoslanding/videos/2562218477149895/";
     // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
     /* &p[images][0]=${image}' */
     // let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
@@ -89,7 +89,7 @@ class IndexPage extends React.Component {
               <div className="row">
                 <div className="offset-by-one ten columns">
                   <div className="center spacing">
-                    <img src={mohublogo} alt="mohub logo"/>
+                    <img src={landinglogo} alt="landing logo"/>
                   </div>
                   <div className="white">
                     <div className="red">Importante! Siga as instruções abaixo</div>

@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 import Layout from '../components/layout'
 import Container from '../components/Container'
 import Background from '../assets/img/backgrounds/bg-01.png'
-import MohubLogo from '../assets/img/mohub_white.png'
+import MohubLogo from '../assets/img/landing_white.png'
 // import landing01 from "../assets/img/video.png";
 // import testimonial from "../assets/img/testimonial.png"
 import shield from '../assets/img/shield.png'
@@ -53,7 +53,7 @@ class SalesPage extends React.Component {
   }
 
   async timer (id) {
-    // const res = await fetch(`https://www.mohub.com.br/wp-json/wp/v2/users/?slug=${id}`)
+    // const res = await fetch(`https://www.landing.com.br/wp-json/wp/v2/users/?slug=${id}`)
     // const lead = await res.json()
     const day = 1000 * 60 * 60 * 24
     const today = new Date()
@@ -67,7 +67,7 @@ class SalesPage extends React.Component {
     if (this.state.id.length === 0) {
       window.location = '/'
     } else {
-      const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/v1/token', {
+      const response = await fetch('https://landing.com.br/wp-json/jwt-auth/v1/token', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -77,7 +77,7 @@ class SalesPage extends React.Component {
       })
       const res = await response.json()
       // console.log(res)
-      const rawResponse = await fetch(`https://mohub.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
+      const rawResponse = await fetch(`https://landing.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -143,7 +143,7 @@ class SalesPage extends React.Component {
   }
 
   render () {
-    const siteTitle = 'MoHub'
+    const siteTitle = 'Landing'
     return (
       <Layout>
         <Helmet title={siteTitle}>
@@ -155,7 +155,7 @@ class SalesPage extends React.Component {
             <div className="row">
               <div className="offset-by-one ten columns">
                 <div className="center spacing">
-                  <img src={MohubLogo} alt="mohub logo"/>
+                  <img src={MohubLogo} alt="landing logo"/>
                 </div>
                 <br/>
                 <div className="white">
@@ -169,7 +169,7 @@ class SalesPage extends React.Component {
                   <Box align="center" pad="medium">
                     <br/>
                     <a className="btn" href="#investment" >
-                              &nbsp; Fazer parte da MoHub
+                              &nbsp; Fazer parte da Landing
                     </a>
                   </Box>
                 </div>
@@ -260,14 +260,14 @@ class SalesPage extends React.Component {
                   <br/>
                   <Box margin={size}>
                     <a className="btn" href="#investment" >
-                        &nbsp; Fazer parte da MoHub
+                        &nbsp; Fazer parte da Landing
                     </a>
                   </Box>
                 </Box>
               )}
             </ResponsiveContext.Consumer>
             <Box id="sales" margin={{ vertical: 'medium' }}>
-              <Heading level={2} className="uppercase">O que você ganha ao entrar para a MoHub?</Heading>
+              <Heading level={2} className="uppercase">O que você ganha ao entrar para a Landing?</Heading>
               <div className="row">
                 <Stack className="six columns blue" anchor="top-left">
                   <Heading className="title" level={2}>O Seu Ponto de Partida</Heading>
@@ -455,7 +455,7 @@ class SalesPage extends React.Component {
                     <Box border={{ color: '#e1e1e7' }} margin="small"/>
                     <Heading textAlign="center" color="#0266ae">R$ 55,00</Heading>
                     <a className="btn btn-block" href="#investment">
-                      Fazer parte da MoHub
+                      Fazer parte da Landing
                     </a>
                     <br/>
                     <Image fit="contain" src={card}/>
@@ -597,7 +597,7 @@ class SalesPage extends React.Component {
                   <br/>
                   <Box margin={size}>
                     <a className="btn" href="#investment" >
-                        &nbsp; Fazer parte da MoHub
+                        &nbsp; Fazer parte da Landing
                     </a>
                   </Box>
                 </Box>
